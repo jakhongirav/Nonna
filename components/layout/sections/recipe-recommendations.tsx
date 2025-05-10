@@ -37,64 +37,85 @@ type Message = {
   storePrices?: StorePrices;
 };
 
+const MOCK_PRODUCTS = [
+  { id: 1, name: "Pomodori San Marzano", quantity: "500g", price: "€2.50", store: "Frutta e Verdura Santoro" },
+  { id: 2, name: "Olio d'Oliva Extra Vergine", quantity: "500ml", price: "€6.90", store: "Emporio del Buongustaio" },
+  { id: 3, name: "Basilico Fresco", quantity: "1 mazzo", price: "€1.80", store: "Alimentari San Marco" },
+  { id: 4, name: "Mozzarella di Bufala", quantity: "200g", price: "€4.30", store: "Supermercato da Pina" },
+  { id: 5, name: "Impasto per Pizza", quantity: "400g", price: "€1.20", store: "Spaccio Alimentare Il Fiorentino" },
+  { id: 6, name: "Funghi Champignon", quantity: "250g", price: "€2.10", store: "Mercato Express Bellini" },
+  { id: 7, name: "Prosciutto Crudo", quantity: "150g", price: "€3.90", store: "Alimentari La Luna" },
+  { id: 8, name: "Formaggio Vegano", quantity: "180g", price: "€4.70", store: "Macelleria Leone" },
+  { id: 9, name: "Farina di Grano Tenero", quantity: "1kg", price: "€1.40", store: "Minimarket Corti" },
+  { id: 10, name: "Pomodorini Ciliegino", quantity: "300g", price: "€2.20", store: "Spaccio Goloso Ferrara" }
+];
+
 const staticRecipeResponse = {
-  chat_response: `### Pasta Carbonara
+  chat_response: `### Pizza Margherita
 
 **Ingredients:**
-- 200g spaghetti
-- 100g pancetta or guanciale
-- 2 large eggs
-- 50g Pecorino Romano cheese
-- 50g Parmigiano-Reggiano cheese
-- Freshly ground black pepper
-- Salt to taste
+- 400g Impasto per Pizza
+- 500g Pomodori San Marzano
+- 200g Mozzarella di Bufala
+- 1 mazzo Basilico Fresco
+- 50ml Olio d'Oliva Extra Vergine
+- Sale q.b.
 
 **Instructions:**
-1. Bring a large pot of salted water to boil and cook spaghetti according to package instructions
-2. While pasta cooks, cut pancetta into small cubes
-3. In a bowl, whisk eggs and mix in grated cheeses and black pepper
-4. In a large pan, cook pancetta until crispy
-5. Drain pasta, reserving some pasta water
-6. Working quickly, add hot pasta to the pan with pancetta
-7. Remove pan from heat and add egg mixture, stirring constantly
-8. Add pasta water as needed to create a creamy sauce
-9. Serve immediately with extra cheese and black pepper
+1. Stendere l'impasto per pizza su una teglia
+2. Tritare i pomodori San Marzano e distribuirli sulla pizza
+3. Aggiungere la mozzarella di bufala a pezzi
+4. Condire con olio d'oliva extra vergine
+5. Cuocere in forno a 250°C per 12-15 minuti
+6. Aggiungere il basilico fresco a fine cottura
 
 **Tips:**
-- Use room temperature eggs to prevent scrambling
-- Don't let the eggs cook too much - they should create a creamy sauce
-- The heat from the pasta will cook the eggs just enough`,
+- Riscaldare il forno almeno 30 minuti prima
+- Usare una pietra refrattaria per una cottura migliore
+- Non sovraccaricare la pizza con troppi ingredienti`,
   store_prices: {
     store_id: 1,
-    total_price: 15.99,
+    total_price: 16.70,
     products: [
       {
-        name: "Spaghetti",
-        price: 2.99,
+        name: "Impasto per Pizza",
+        price: 1.20,
+        store_id: 1,
+        quantity: 400,
+        unit: "g",
+        store: "Spaccio Alimentare Il Fiorentino"
+      },
+      {
+        name: "Pomodori San Marzano",
+        price: 2.50,
+        store_id: 1,
+        quantity: 500,
+        unit: "g",
+        store: "Frutta e Verdura Santoro"
+      },
+      {
+        name: "Mozzarella di Bufala",
+        price: 4.30,
         store_id: 1,
         quantity: 200,
-        unit: "g"
+        unit: "g",
+        store: "Supermercato da Pina"
       },
       {
-        name: "Pancetta",
-        price: 4.99,
+        name: "Basilico Fresco",
+        price: 1.80,
         store_id: 1,
-        quantity: 100,
-        unit: "g"
+        quantity: 1,
+        unit: "mazzo",
+        store: "Alimentari San Marco"
       },
       {
-        name: "Pecorino Romano",
-        price: 3.99,
+        name: "Olio d'Oliva Extra Vergine",
+        price: 6.90,
         store_id: 1,
-        quantity: 50,
-        unit: "g"
-      },
-      {
-        name: "Parmigiano-Reggiano",
-        price: 4.02,
-        store_id: 1,
-        quantity: 50,
-        unit: "g"
+        quantity: 500,
+        unit: "ml",
+        store: "Emporio del Buongustaio"
       }
     ]
   }
