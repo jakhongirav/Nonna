@@ -13,13 +13,13 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 type Product = {
   name: string;
   price: number;
-  store_id: number;
+  store: string;
   quantity: number;
   unit: string;
 };
 
 type StorePrices = {
-  store_id: number;
+  store: string;
   total_price: number;
   products: Product[];
 };
@@ -74,48 +74,43 @@ const staticRecipeResponse = {
 - Usare una pietra refrattaria per una cottura migliore
 - Non sovraccaricare la pizza con troppi ingredienti`,
   store_prices: {
-    store_id: 1,
+    store: "Spaccio Alimentare Il Fiorentino",
     total_price: 16.70,
     products: [
       {
         name: "Impasto per Pizza",
         price: 1.20,
-        store_id: 1,
+        store: "Spaccio Alimentare Il Fiorentino",
         quantity: 400,
-        unit: "g",
-        store: "Spaccio Alimentare Il Fiorentino"
+        unit: "g"
       },
       {
         name: "Pomodori San Marzano",
         price: 2.50,
-        store_id: 1,
+        store: "Frutta e Verdura Santoro",
         quantity: 500,
-        unit: "g",
-        store: "Frutta e Verdura Santoro"
+        unit: "g"
       },
       {
         name: "Mozzarella di Bufala",
         price: 4.30,
-        store_id: 1,
+        store: "Supermercato da Pina",
         quantity: 200,
-        unit: "g",
-        store: "Supermercato da Pina"
+        unit: "g"
       },
       {
         name: "Basilico Fresco",
         price: 1.80,
-        store_id: 1,
+        store: "Alimentari San Marco",
         quantity: 1,
-        unit: "mazzo",
-        store: "Alimentari San Marco"
+        unit: "mazzo"
       },
       {
         name: "Olio d'Oliva Extra Vergine",
         price: 6.90,
-        store_id: 1,
+        store: "Emporio del Buongustaio",
         quantity: 500,
-        unit: "ml",
-        store: "Emporio del Buongustaio"
+        unit: "ml"
       }
     ]
   }
@@ -362,7 +357,7 @@ export const RecipeRecommendationsSection = () => {
                                         <div className="flex justify-between items-center">
                                           <span className="text-xs text-muted-foreground flex items-center gap-1">
                                             <MapPinned className="w-3 h-3" />
-                                            Store #{product.store_id}
+                                            {product.store}
                                           </span>
                                           <Button variant="ghost" size="sm" className="h-7">
                                             <ShoppingCart className="h-3 w-3 mr-1" />
