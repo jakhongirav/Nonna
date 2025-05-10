@@ -8,14 +8,14 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: "https://github.com/nobruf/shadcn-landing-page.git",
-    title: "Shadcn - Landing template",
-    description: "Free Shadcn landing page for developers",
+    title: "Nonna - Groceries Management",
+    description: "Make your groceries accessible to everyone",
     images: [
       {
         url: "https://res.cloudinary.com/dbzv9xfjp/image/upload/v1723499276/og-images/shadcn-vue.jpg",
         width: 1200,
         height: 630,
-        alt: "Shadcn - Landing template",
+        alt: "Nonna - Groceries Management",
       },
     ],
   },

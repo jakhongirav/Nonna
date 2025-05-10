@@ -10,6 +10,13 @@ export const HeroSection = () => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
+  const scrollToRecipes = () => {
+    const recipesSection = document.getElementById('recipe-recommendations');
+    if (recipesSection) {
+      recipesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="container w-full relative min-h-[80vh] overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -45,7 +52,10 @@ export const HeroSection = () => {
           </p>
 
           <div className="space-y-4 md:space-y-0 md:space-x-4">
-            <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
+            <Button 
+              className="w-5/6 md:w-1/4 font-bold group/arrow"
+              onClick={scrollToRecipes}
+            >
               Get Started
               <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
             </Button>
